@@ -21,7 +21,14 @@ class App extends Component {
 
 
   render() {
-
+    const otherStyle = {
+        width: '500px',
+        height: '295px',
+        border: '5px solid purple',
+        margin: '6px 10px',
+        padding: '15px 10px 5px 20px',
+        backgroundColor: 'orange',
+    };
 
     return (
       <div className="App">
@@ -40,6 +47,9 @@ class App extends Component {
         <div className='output'>
             <UserOutput username={this.state.username} ></UserOutput>
             <UserOutput username={this.state.username} ></UserOutput>
+        </div>
+        <div className='otherOutput'>
+            <UserOutput username={this.state.username} style={otherStyle} ></UserOutput>
         </div>
         <div className='input'>
             <UserInput change={this.setUsername} name={this.state.username}></UserInput>
