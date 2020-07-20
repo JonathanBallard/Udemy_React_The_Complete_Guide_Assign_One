@@ -44,15 +44,15 @@ class App extends Component {
           <li>Add two-way-binding to your input (in UserInput) to also display the starting username</li>
           <li>Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets</li>
         </ol>
-        <div className='output'>
-            <UserOutput username={this.state.username} ></UserOutput>
-            <UserOutput username={this.state.username} ></UserOutput>
+        <div>
+            <UserOutput className='output' username={this.state.username} ></UserOutput>
+            <UserOutput className='output' username={this.state.username} ></UserOutput>
         </div>
-        <div className='otherOutput'>
-            <UserOutput username={this.state.username} style={otherStyle} ></UserOutput>
+        <div>
+            <UserOutput className='otherOutput' username={this.state.username} style={otherStyle} ></UserOutput>
         </div>
-        <div className='input'>
-            <UserInput change={this.setUsername} name={this.state.username}></UserInput>
+        <div>
+            <UserInput className='input' change={this.setUsername} name={this.state.username}></UserInput>
         </div>
       </div>
     );

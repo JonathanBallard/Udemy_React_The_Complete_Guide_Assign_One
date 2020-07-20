@@ -1,0 +1,8 @@
+
+.output {
+    border: 6px double green;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px 15px;
+    margin: 10px 20px;
+}
