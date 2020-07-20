@@ -5,11 +5,24 @@ import UserOutput from './components/UserOutput';
 
 class App extends Component {
 
-    getUsername = (username) => {
-        this.state = username;
+    constructor(props){
+        super(props);
+        this.state = {
+            username: 'default',
+        };
     }
 
+    setUsername = (e) => {
+        this.setState({
+            username: e.target.value,
+        });
+    }
+
+
+
   render() {
+
+
     return (
       <div className="App">
         <ol>
@@ -24,8 +37,13 @@ class App extends Component {
           <li>Add two-way-binding to your input (in UserInput) to also display the starting username</li>
           <li>Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets</li>
         </ol>
-        <UserOutput username={this.getUsername} ></UserOutput>
-        <UserOutput username={this.getUsername}></UserOutput>
+        <div className='output'>
+            <UserOutput username={this.state.username} ></UserOutput>
+            <UserOutput username={this.state.username} ></UserOutput>
+        </div>
+        <div className='input'>
+            <UserInput change={this.setUsername} name={this.state.username}></UserInput>
+        </div>
       </div>
     );
   }
